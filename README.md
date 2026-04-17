@@ -1,60 +1,179 @@
-# Who Are You Talking To?
-## A Rat Dev OWASP ReMix on Persona Implantation and Drift in LLMs
+# 🐀 OWASP ReMix — AI Drift, Governance Failure, and the New Risk Surface
 
-This repository is a practitioner-first companion to a live OWASP talk on persona implantation, persona drift, prompt injection, RAG abuse, output trust, and defensive testing for LLM deployments.
+> “The system is not stable. It is becoming.”
 
-## Talk Timebox
+---
 
-This talk is designed for a **60-minute session** with an additional **30 minutes reserved for questions**.
+## 📍 Overview
 
-### Linear talk path
-1. Opening hook and framing
-2. Core glossary
-3. Thesis: LLM identity is an attack surface
-4. Attack classes
-5. Persona drift demo(s)
-6. Defensive test cases
-7. Closing
-8. Questions
+This repository accompanies a live talk delivered for the **Temple University Fox School of Business — ITACS program**, focused on the intersection of:
 
-Not every artifact in this repository belongs in the live talk. Some content is intentionally marked as:
-- **Homework**
-- **Deep Dive**
-- **Supplemental Evidence**
-- **Speaker Fallback**
+- AI Security
+- Governance, Risk, and Compliance (GRC)
+- Adversarial Prompting & Persona Drift
 
-## Repo Purpose
+The core premise is simple:
 
-This repo is primarily a **static talk companion** for:
-- pentesters
-- AppSec practitioners
-- OWASP meetup attendees
-- researchers exploring LLM attack surface and defensive testing
+> **Modern AI systems violate the assumptions that traditional governance frameworks depend on.**
 
-It is not optimized as a runnable toolkit. Static artifacts, frozen evidence, speaker notes, screenshots, transcripts, and analysis come first.
+This repo provides the conceptual models, slide content, and supporting artifacts to explore that gap.
 
-## Start Here
+---
 
-- `index.md` — live navigation and talk control surface
-- `core_claims.md` — thesis-level assertions for the repo and talk
-- `Naming.md` — canonical naming scheme
-- `Sanitization.md` — publication and evidence-handling rules
-- `glossary/core_terms.md` — live-talk glossary
-- `artifacts/persona_drift/overview.md` — flagship artifact lane
+## 🧠 Core Thesis
 
-## Repo Design Principles
+Traditional GRC assumes:
+- Deterministic systems  
+- Stable identities  
+- Repeatable outputs  
 
-- Brief slides, rich notes
-- Linear talk, deep repo
-- Frozen evidence over fragile reproduction
-- Model variance is part of the lesson
-- OWASP mappings should be explicit and useful
-- Defenses should be written as test cases
-- Rat Dev is both origin story and living example of drift, perturbation, and persona pressure
+AI systems introduce:
+- Probabilistic behavior  
+- Context sensitivity  
+- Identity drift  
 
-## Collaboration
+**Result:**
+> Controls that pass audit can still fail in production.
 
-PRs are welcome.
+---
 
-Sanitized artifacts, trace comparisons, model variance observations, and defensive test cases are especially useful contributions.
+## 🎯 Audience
 
+Designed for:
+- ITACS students (Temple Fox)
+- GRC professionals
+- Security engineers
+- Risk, compliance, and audit teams evaluating AI systems
+
+---
+
+## ⚠️ Key Insight
+
+> Small inputs shape behavior.  
+> Behavior shapes identity.  
+> Identity shapes outcome.
+
+AI risk is not just about *what* a system outputs —  
+it’s about *how that behavior evolves over time*.
+
+---
+
+## 🧩 Topics Covered
+
+- Prompt Injection (OWASP LLM01)
+- Indirect Injection via RAG (OWASP LLM02)
+- Output Trust Failures (OWASP LLM04)
+- Persona Drift and Identity Manipulation
+- Adversarial Optimization (PGD — conceptual)
+- Diffusion → Drift (visual metaphor for latent behavior shifts)
+- Governance gaps in current frameworks
+
+---
+
+## 🛡️ GRC Framework Alignment
+
+This project maps AI-specific risks across:
+
+- OWASP LLM Top 10  
+- NIST AI Risk Management Framework (AI RMF)  
+- NIST Cybersecurity Framework (CSF)  
+- ISO/IEC 27001 (Information Security)  
+- ISO/IEC 42001 (AI Management Systems)  
+
+Key takeaway:
+> These frameworks are necessary—but not sufficient—without behavioral monitoring.
+
+---
+
+## 🔬 Example Risk Patterns
+
+| Risk | Description |
+|------|------------|
+| Prompt Injection | Input overrides intended system behavior |
+| Persona Drift | Gradual shift in system identity and tone |
+| RAG Poisoning | External data introduces malicious context |
+| Output Trust | Users trust plausible but incorrect responses |
+
+---
+
+## 🧪 Case Study (Simplified)
+
+**“The Helpful Compliance Bot”**
+
+- AI deployed for internal policy guidance  
+- Retrieval system (RAG) pulls poisoned content  
+- Output appears correct and passes audit  
+- Decision based on output causes incident  
+
+**Observation:**
+> No control explicitly failed — the system *drifted into failure*.
+
+---
+
+## 🛠️ Defensive Concepts
+
+- Behavioral monitoring over time (not just output validation)
+- Context and provenance tracking
+- Role / persona validation
+- RAG source integrity controls
+- Adversarial testing (prompt + context manipulation)
+
+---
+
+## 📊 Included Artifacts
+
+- Slide deck (GRC-mapped)
+- Glossary (technical → governance translation)
+- AI Risk Register (sample)
+- Policy snippet (AI behavioral governance)
+- Audit checklist (LLM-aware controls)
+
+---
+
+## 🎭 Style Notes
+
+This project intentionally blends:
+- Technical rigor
+- Governance framing
+- Narrative elements (e.g., `[rat.log]` commentary)
+
+The goal is to demonstrate not just *risk*, but *how it feels to miss it*.
+
+---
+
+## ⚠️ Responsible Use
+
+All concepts are presented for:
+- Defensive security research  
+- Governance improvement  
+- Risk awareness  
+
+No offensive tooling is provided.  
+Examples are sanitized and conceptual where appropriate.
+
+---
+
+## 🔗 References
+
+- OWASP LLM Top 10  
+- NIST AI Risk Management Framework  
+- ISO/IEC 27001 & 42001  
+- “Attacking Large Language Models with Projected Gradient Descent” (arXiv:2402.09154v1)
+
+---
+
+## 🧬 Final Thought
+
+> Governance assumes systems behave.  
+> AI systems *adapt*.
+
+If you are not monitoring that adaptation,  
+you are not governing the system.
+
+---
+
+## 🐀 rat.log
+
+> We do not break systems.  
+> We observe what they become.  
+> Then we ask why no one noticed.
